@@ -17,14 +17,19 @@ console.log('Min',
 console.log('sum',sum);
 console.log('SumFloor', sumFloor);
 console.log('Round to hundred',
-  roundHundred(firstNumber, secondNumber, thirdNumber));
+  roundHundred(firstNumber), roundHundred(secondNumber), roundHundred(thirdNumber) );
 console.log('true or false :', sumFloor === false);
 console.log('Rest :', rest500);
 console.log('First', firstNumber.toFixed(2));
 console.log('second', secondNumber.toFixed(2));
 console.log('third', thirdNumber.toFixed(2));
 
-function roundHundred(...value){
+console.log(`Cкидка ${discount}, 
+Купівля товару за номером 2 ${eventPurchase(secondNumber)},
+Купівля товару ціною 100 ${eventPurchase(100)},
+Купівля товару ціною 1 ${eventPurchase(1)}` );
+
+function dHundred(value){
    return Math.round(value/100)*100
 }
 
@@ -38,10 +43,4 @@ function eventPurchase(product){
     product * discount/100);
   
   return profit.toFixed(2);
-}
-
-console.log(`Cкидка ${discount}, 
-Купівля товару за номером 2 ${eventPurchase(secondNumber)},
-Купівля товару ціною 100 ${eventPurchase(100)},
-Купівля товару ціною 1 ${eventPurchase(1)}` ); 
-//fdsfdsfdfdsdfsdf
+} 
