@@ -1,36 +1,36 @@
-const firstNumber = 15.678;
-const secondNumber = 123.965;
-const thirdNumber = 90.2345;
-const sum = firstNumber + secondNumber + thirdNumber;
+const firstProduct = 15.678;
+const secondProduct = 123.965;
+const thirdProduct = 90.2345;
+const sum = firstProduct + secondProduct + thirdProduct;
 const sumFloor = 
-  Math.floor(firstNumber) +
-  Math.floor(secondNumber) +
-  Math.floor(thirdNumber);
+  Math.floor(firstProduct) +
+  Math.floor(secondProduct) +
+  Math.floor(thirdProduct);
 const rest500 = 500 - sum;
 const discount = getRandomInt(5, 25);
 
 
 console.log('Max',
-  Math.max(firstNumber, secondNumber, thirdNumber));
+  Math.max(firstProduct, secondProduct, thirdProduct));
 console.log('Min',
-  Math.min( firstNumber, secondNumber, thirdNumber));
-console.log('sum',sum);
+  Math.min( firstProduct, secondProduct, thirdProduct));
+console.log('Sum',sum);
 console.log('SumFloor', sumFloor);
 console.log('Round to hundred',
-  roundHundred(firstNumber), roundHundred(secondNumber), roundHundred(thirdNumber) );
-console.log('true or false :', sumFloor === false);
+  roundHundred(firstProduct), roundHundred(secondProduct), roundHundred(thirdProduct) );
+console.log('True or false :', sumFloor === false);
 console.log('Rest :', rest500);
-console.log('First', firstNumber.toFixed(2));
-console.log('second', secondNumber.toFixed(2));
-console.log('third', thirdNumber.toFixed(2));
+console.log('First', firstProduct.toFixed(2));
+console.log('Second', secondProduct.toFixed(2));
+console.log('Third', thirdProduct.toFixed(2));
 
-console.log(`Cкидка ${discount}, 
-Купівля товару за номером 2 ${eventPurchase(secondNumber)},
-Купівля товару ціною 100 ${eventPurchase(100)},
-Купівля товару ціною 1 ${eventPurchase(1)}` );
+console.log(`Discount ${discount}, 
+Buying second product 2 ${eventPurchase(secondProduct)},
+Buying first product ${eventPurchase(firstProduct)},
+Purchase of product at a price 1 ${eventPurchase(1)}` );
 
 function roundHundred(value){
-   return Math.round(value/100)*100
+   return Math.round(value/100)*100;
 }
 
 function getRandomInt(min, max){
