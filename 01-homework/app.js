@@ -29,7 +29,7 @@ console.log(`Cкидка ${discount},
 Купівля товару ціною 100 ${eventPurchase(100)},
 Купівля товару ціною 1 ${eventPurchase(1)}` );
 
-function dHundred(value){
+function roundHundred(value){
    return Math.round(value/100)*100
 }
 
