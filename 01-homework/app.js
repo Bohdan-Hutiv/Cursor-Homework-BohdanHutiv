@@ -44,3 +44,4 @@ console.log(`Cкидка ${discount},
 Купівля товару за номером 2 ${eventPurchase(secondNumber)},
 Купівля товару ціною 100 ${eventPurchase(100)},
 Купівля товару ціною 1 ${eventPurchase(1)}` ); 
+//fdsfdsfdfdsdfsdf
