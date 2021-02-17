@@ -1,46 +1,44 @@
-const firstProduct = 15.678;
-const secondProduct = 123.965;
-const thirdProduct = 90.2345;
-const sum = firstProduct + secondProduct + thirdProduct;
-const sumFloor = 
-  Math.floor(firstProduct) +
-  Math.floor(secondProduct) +
-  Math.floor(thirdProduct);
-const rest500 = 500 - sum;
+const penPrice = 15.678;
+const pineApplePrice = 123.965;
+const applePrice = 90.2345;
+const sum123 = penPrice + pineApplePrice + applePrice;
+const sum123Floor = 
+  Math.floor(penPrice) +
+  Math.floor(pineApplePrice) +
+  Math.floor(applePrice);
+const buyerHas500Rest = 500 - sum123;
 const discount = getRandomInt(5, 25);
 
 
-console.log('Max',
-  Math.max(firstProduct, secondProduct, thirdProduct));
-console.log('Min',
-  Math.min( firstProduct, secondProduct, thirdProduct));
-console.log('Sum',sum);
-console.log('SumFloor', sumFloor);
-console.log('Round to hundred',
-  roundHundred(firstProduct), roundHundred(secondProduct), roundHundred(thirdProduct) );
-console.log('True or false :', sumFloor === false);
-console.log('Rest :', rest500);
-console.log('First', firstProduct.toFixed(2));
-console.log('Second', secondProduct.toFixed(2));
-console.log('Third', thirdProduct.toFixed(2));
-
-console.log(`Discount ${discount}, 
-Buying second product 2 ${eventPurchase(secondProduct)},
-Buying first product ${eventPurchase(firstProduct)},
-Purchase of product at a price 1 ${eventPurchase(1)}` );
-
-function roundHundred(value){
-   return Math.round(value/100)*100;
-}
+console.log(`
+  Maximum number : ${Math.max(penPrice, pineApplePrice, applePrice)}
+  Minimum number : ${Math.min( penPrice, pineApplePrice, applePrice)}
+  The sum of all goods ${sum123}
+  The sum of all goods without coins ${sum123Floor}
+  The sum of all goods is rounded to the nearest hundred ${ Math.round( (penPrice + pineApplePrice + applePrice) / 100 ) * 100 }
+  Is the even sum of all goods (rounded down) : ${isEven(sum123Floor)}
+  The rest when paying 500 ${buyerHas500Rest}
+  The average price of pineApple ${pineApplePrice.toFixed(2)} Apple ${applePrice.toFixed(2)} penPrice ${penPrice.toFixed(2)}
+  Random discount = ${discount}, 
+  Net income from buying a pineApple ${profitFromPurchase(pineApplePrice)}
+  Net income from buying a apple ${profitFromPurchase(applePrice)}
+  Net income from buying a penPrice ${profitFromPurchase(penPrice)} `);
 
 function getRandomInt(min, max){
-  // від min до max, не включаючи max. Округлено до 2 знаків після коми.
+  // Повертає випадкове число від min до max, не включаючи max. Округлено до 2 знаків після коми.
   return (Math.random() * (max - min) + min).toFixed(2);
 }
 
-function eventPurchase(product){
+function isEven(value) {
+  if (value % 2 === 0)
+    return true;
+  else
+    return false;
+}
+
+function profitFromPurchase(product){
   const profit = product/2 - (
-    product * discount/100);
+  product * discount/100);
   
   return profit.toFixed(2);
 } 
