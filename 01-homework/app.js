@@ -7,7 +7,7 @@ const sumPricesAllFloor =
   Math.floor(pineApplePrice) +
   Math.floor(applePrice);
 const buyerHas500Rest = 500 - sumPricesAll;
-const discount = getRandomInt(5, 25);
+const discount = getRandomInt(0, 100);
 
 
 console.log(`
@@ -16,22 +16,16 @@ console.log(`
   The sum of all goods ${sumPricesAll}
   The sum of all goods without coins ${sumPricesAllFloor}
   The sum of all goods is rounded to the nearest hundred ${ Math.round( (penPrice + pineApplePrice + applePrice) / 100 ) * 100 }
-  Is the even sum of all goods (rounded down) : ${isEven(sumPricesAllFloor)}
+  Is the even sum of all goods (rounded down) : ${sumPricesAllFloor % 2 === 0}
   The rest when paying 500 ${buyerHas500Rest}
   The average price of goods ${(sumPricesAll / 3).toFixed(2) } 
   Random discount = ${discount}, 
   Net income from buying a pineApple, apple and pen ${ profitFromPurchase(pineApplePrice, applePrice, penPrice) } `);
 
 function getRandomInt(min, max){
-  // Повертає випадкове число від min до max, не включаючи max. Округлено до 2 знаків після коми.
-  return +(Math.random() * (max - min) + min).toFixed(2);
-}
-
-function isEven(value) {
-  if (value % 2 === 0)
-    return true;
-  else
-    return false;
+  Math.ceil(min);
+  Math.floor(max);
+  return Math.floor( Math.random() * (max - min + 1) ) + min ;
 }
 
 function profitFromPurchase(...productPrices){
