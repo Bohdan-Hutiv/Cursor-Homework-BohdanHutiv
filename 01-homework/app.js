@@ -20,18 +20,10 @@ console.log(`
   The rest when paying 500 ${buyerHas500Rest}
   The average price of goods ${(sumPricesAll / 3).toFixed(2) } 
   Random discount = ${discount}, 
-  Net income from buying a pineApple, apple and pen ${ profitFromPurchase(pineApplePrice, applePrice, penPrice) } `);
+  Net income from buying a pineApple, apple and pen ${ ( sumPricesAll/2 - (sumPricesAll * discount/100) ).toFixed(2) } `);
 
 function getRandomInt(min, max){
   Math.ceil(min);
   Math.floor(max);
   return Math.floor( Math.random() * (max - min + 1) ) + min ;
 }
-
-function profitFromPurchase(...productPrices){
-  let profit = 0;
-  for(let productPrice of productPrices){
-    profit = profit + productPrice/2 - (productPrice * discount/100);
-  }
-  return +profit.toFixed(2);
-} 
