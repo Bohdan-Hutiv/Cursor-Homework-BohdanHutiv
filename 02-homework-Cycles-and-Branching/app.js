@@ -1,30 +1,32 @@
-//Ростислав Доскочинський 
-//rostik frontend 4 years viddaleno pratsue.
-// Mae knowledge from frontend.
-let n = parseInt( prompt( 'Введіть число N' ) );
 
-if( !isFinite(n) ){
-  do{
-    n = prompt( 'Введіть число N. Число, а не рядок!' );
-    n = parseInt(n);
-  }while( !isFinite(n) );
+let firstNumber = 0;
+let lastNumber = 0;
+let currentNumber = 0;
+let sumFromTo = 0;
+
+firstNumber = parseInt( prompt( 'Введіть перше число' ) );
+lastNumber = parseInt( prompt( 'Введіть останнє число' ) );
+
+while( !isFinite(firstNumber) ){
+  firstNumber = prompt( 'Введіть перше число' );
+  firstNumber = parseInt(firstNumber);
 }
 
-let m = parseInt( prompt( 'Введіть число M' ) );
-
-if(!isFinite(m)){
-  do{
-    m = prompt( 'Введіть число M. Число, а не рядок!' );
-    m = parseInt(m);
-  }while( !isFinite(m) );
+while(!isFinite(lastNumber)){
+  lastNumber = prompt( 'Введіть  останнє число' );
+  lastNumber = parseInt(lastNumber);
 }
 
-const boolean = confirm( 'Пропускати нам парні числа?' );
+const passEven = confirm( 'Пропускати нам парні числа ?' );
 
-console.log(n, m);
-
-let result = m;
-for(let i = 0; i < (m - n); i++){
-  result = result + m + 1;
+if(firstNumber > lastNumber){
+  [firstNumber, lastNumber] = [lastNumber, firstNumber]
 }
-console.log(result);
+
+for(let currentNumber = firstNumber; currentNumber <= lastNumber; currentNumber++){
+  if(passEven && (currentNumber % 2) === 0) continue;
+  sumFromTo += currentNumber;
+}
+
+alert(`Cума всіх чисел від ${firstNumber} до ${lastNumber} : ${sumFromTo}`);
+console.log(`Cума всіх чисел від ${firstNumber} до ${lastNumber} : ${sumFromTo}`);
