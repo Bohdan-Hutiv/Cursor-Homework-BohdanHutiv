@@ -19,14 +19,14 @@ function mathPow(number, degree){
 
     return 1;
   }
-  for(let i = 1; i <= degree; i++){
-    number *= number;
+  for(let i = 1; i < degree; i++){
+    result *= number;
   }
 
   return result;
 }
 
-console.log(`Створити функцію, яка визначає ступінь числа ${mathPow(4, 4)}` );
+console.log(`Створити функцію, яка визначає ступінь числа (4 в четвертій) ${mathPow(4, 4)}` );
 
 function formatName(name){
   return  name[0].toUpperCase() + name.slice(1).toLowerCase();
